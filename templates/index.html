@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link href="{% static 'css/webfonts/all.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script src="{% static 'jquery-3.4.1.min.js' %}"></script>
+	  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </head>
+  <body>
+
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">LetzHealth</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              {% if session_id %}
+              <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Appointments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Help</a>
+              </li>
+              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact us</a>
+              </li>
+              {% if not session_id %}
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal" >Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'registration' %}">Sign up</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+      {% if session_id %}
+      <div class="header"   style="background-image:  url( {% static 'img/cover2.jpg' %} )" >
+        {% if is_doctor %}
+        <h1>Welcome Dr {{ current_user.surname|capfirst }},work on appointments today!</h1>
+        <p>Online Doctor Help,Would you like to set <span class="button">schedule</span> ?</p>
+        {% endif %}
+        {% if is_patient %}
+        <h1>Welcome {{current_user.name|capfirst}} {{current_user.surname|capfirst }},make an appointment today!</h1>
+        <p>Online Doctor Help,Would you like to make an <span class="button">appointment</span> ?</p>
+        {% endif %}
+      </div>
+      {% else %}
+      <div class="header"   style="background-image:  url( {% static 'img/cover.jpg' %} )" >
+        <h1>Make an appointment today!</h1>
+        <p>Online Doctor Help,Please <span class="button">login</span> to make an appointment.</p>
+      </div>
+      {% endif %}
+     
+
+      <div class="modal" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <p class="text-center">Login</p>
+              <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <input class="form-control" type="text" placeholder="User name" name="username" required>
+                <input class="form-control" type="password" placeholder=" Password" name="password" required>
+                <input class="form-control" type="submit" value="Login">
+                <div class="row">
+                    <input class="col-1" type="checkbox">
+                    <p class="col">Remember me</p>
+                    <p class="col">Forgot <span class="pass">Password</span></p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+        })
+      </script>
+
+    </body>
+</html>

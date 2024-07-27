@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/doctors.css' %}">
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class="row search">
+        <input placeholder="search doctor" class="form-control col-2" type="text">
+        <input class="btn col-1" type="submit" value="search">
+        <input class="btn col-2 pl" type="submit" value="Add Doctor">
+    </div>
+    
+    <div class="jumbotron">
+      <h1 class="text-primary text-center">List of Doctors</h1>
+    </div>
+    <div class="row">
+        <div class="col-7">
+            <div class="row doc">
+                <div class="col-2 left-side">
+                </div>
+                <div class="col right-side">
+                    <div class="row">
+                        <div class="col">
+                          <h4>Tefelo khoabeng</h4>
+                          <h6>ttrgfg@gmail.com</h6>
+                          <p class="text-primary">Bones</p>
+                        </div>
+                        <div class="col">
+                           <div class="row btns">
+                              <input class="btn col" type="submit" value="More">
+                              <input class="btn col btnr" type="submit" value="Delete">
+                           </div>
+                        </div>
+                      </div>
+                        
+                    </div>
+                </div>
+        </div>
+        <div class="col">
+            <div class="row number">
+                <div class="col-4">Number Of Doctors</div>
+                <div class="col text-primary">10</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+</div>
+{% endblock %}

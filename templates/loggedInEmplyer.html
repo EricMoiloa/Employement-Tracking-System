@@ -1,0 +1,119 @@
+{% load base.html%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link href="{% static 'css/webfonts/all.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script src="{% static 'jquery-3.4.1.min.js' %}"></script>
+	  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+      
+  </head>
+    <body>
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white shadow-sm">
+            <div class="container-md">
+              <a class="navbar-brand" href="#">Employement Tracking System</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ml-3 me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Hiring</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Applicants</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link">How it works</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link">Contact Us</a>
+                  </li>
+                      
+                </div>
+    
+                <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+          
+          
+                  <div class="navbar-nav ml-auto">
+                    <a href="#" class="nav-item nav-link notifications"><i class="fa fa-bell-o"></i><span class="badge">1</span></a>
+                    <a href="#" class="nav-item nav-link messages"><i class="fa fa-envelope-o"></i><span class="badge">10</span></a></a>
+                    <div class="nav-item dropdown">
+                      <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="{% static 'img/1.jpg' %}" class="avatar" alt="Avatar"> Thato Teboho <b class="caret"></b></a>
+                      <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a></a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a></a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a></a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a></a>
+                      </div>
+                    </div>
+                    <a href="#" class="nav-item nav-link ">Logout</a>
+                  </div>
+                </div>
+            </ul>
+            
+              </div>
+            </div>
+          </nav>   
+          
+          
+    
+          <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    
+                    <img  class="d-block mx-lg-auto img-fluid"  src="{% static 'img/undraw_authentication_re_svpt.svg' %}" alt="">
+                </div>
+                <div class="col-lg-6">
+                    <div class="lc-block mb-3">
+                        <div editable="rich">
+                            <h2 class="fw-bold display-5">Hiring is just that easy these Days</h2>
+                        </div>
+                    </div>
+        
+                    <div class="lc-block d-grid gap-2 d-md-flex justify-content-md-start mb-3">
+                        <a class="btn btn-primary px-4 me-md-2" href="#" role="button">I'm Looking for a Job</a>
+                        
+                    </div>
+                        <div editable="rich">
+                            <div class="row">
+                                <div class="col-md--6">
+                                
+                                <input class="form-control" type="text" placeholder="Keyword" aria-label="default input example">
+                                
+                            </div>
+    
+                            <div class="col-md--6">
+                              
+                            </div>
+                            <div class="lc-block d-grid gap-2 d-md-flex justify-content-md-start mt-3">
+                                <input class="form-control" type="text" placeholder="Location" aria-label="default input example">
+                                <br>
+                                <input class="form-control" type="text" placeholder="Job title" aria-label="default input example">
+                                <a class="btn btn-outline-secondary px-4" href="#" role="button">Find</a>
+                            </div>
+    
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    
+    
+
+     
+
+      
+
+    </body>
+</html>

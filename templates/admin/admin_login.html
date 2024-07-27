@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/admin_login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-8 image"></div>
+    <div class="col left">
+        <div class="form">
+            <form action="{% url 'admin_login' %}" method="POST">
+                {% csrf_token %}
+                <h1 class="text-center">Admin Login</h1>
+                <input class="form-control" type="text" placeholder="User name" name="username" required>
+                <input class="form-control" type="password" placeholder=" Password" name="password" required>
+                <input class="form-control btn" type="submit" value="Login">
+                </div>
+              </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

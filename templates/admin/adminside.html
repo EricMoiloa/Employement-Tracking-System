@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/adminstyle.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1 class="text-primary">Amin<span class="h4 text-dark">Dashboard</span></h1>
+</div>
+<h1 class="text-center">Categories</h1>
+<div class="row">
+  <div class="col">
+    <i class="fa fa-user-md"></i>
+    <h1>Doctors</h1>
+    <h6>View,Add and delete Doctors</h6>
+  </div>
+  <div class="col">
+    <i class="fa fa-user"></i>
+    <h1>Patients</h1>
+    <h6>View,Add and delete Patients</h6>
+  </div>
+  <div class="col">
+    <i class="fa fa-calendar"></i>
+    <h1>Bookings</h1>
+    <h6>View,Add and delete Appointments</h6>
+  </div>
+</div>
+{% endblock %}
